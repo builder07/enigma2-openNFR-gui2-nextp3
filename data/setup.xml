@@ -12,7 +12,20 @@
 	<setup key="usage" title="Customize">
 		<item level="0" text="Setup mode" description="Choose which level of menu/settings to display. 'Expert' level shows all items.">config.usage.setup_level</item>
 		<item level="1" text="Enable teletext caching" description="When enabled, teletext pages will be cached, allowing faster access.">config.usage.enable_tt_caching</item>
-		<item level="1" text="12V output" description="12V output." requires="12V_Output">config.usage.output_12V</item>
+		<item level="1" text="Teletext font and resolution" description="Configure the display resolution and the font used for teletext.">config.usage.tuxtxt_font_and_res</item>
+		<item level="1" tt_level="1" text="Teletext UseTTF (0=fixed font, 1=TrueType)" description="Configure whether a fixed font or a scalable TrueType font is used for teletext.">config.usage.tuxtxt_UseTTF</item>
+		<item level="1" tt_level="1" text="Teletext TTFBold (0=normal, 1=bold)" description="Configure whether a bold TrueType font is used for teletext.">config.usage.tuxtxt_TTFBold</item>
+		<item level="1" tt_level="1" text="Teletext TTFScreenResX (screen X resolution)" description="Configure the screen resolution for teletext (Not all skins support full-HD teletext).">config.usage.tuxtxt_TTFScreenResX</item>
+		<item level="1" tt_level="1" text="Teletext StartX (left border)" description="Configure the start coordinate in x of the teletext display area.">config.usage.tuxtxt_StartX</item>
+		<item level="1" tt_level="1" text="Teletext EndX (right border)" description="Configure the end coordinate in x of the teletext display area.">config.usage.tuxtxt_EndX</item>
+		<item level="1" tt_level="1" text="Teletext StartY (lower border)" description="Configure the start coordinate in y of the teletext display area.">config.usage.tuxtxt_StartY</item>
+		<item level="1" tt_level="1" text="Teletext EndY (upper border)" description="Configure the end coordinate in y of the teletext display area.">config.usage.tuxtxt_EndY</item>
+		<item level="1" tt_level="1" text="Teletext TTFShiftY (vertical letter position)" description="Adjust the vertical position of the letters used for teletext.">config.usage.tuxtxt_TTFShiftY</item>
+		<item level="1" tt_level="1" text="Teletext TTFShiftX (horizontal letter position)" description="Adjust the horizontal position of the letters used for teletext.">config.usage.tuxtxt_TTFShiftX</item>
+		<item level="1" tt_level="1" text="Teletext TTFWidthFactor16 (TrueType letter width)" description="Configure the width of the TrueType font letters used for teletext.">config.usage.tuxtxt_TTFWidthFactor16</item>
+		<item level="1" tt_level="1" text="Teletext TTFHeightFactor16 (TrueType letter height)" description="Configure the height of the TrueType font letters used for teletext.">config.usage.tuxtxt_TTFHeightFactor16</item>
+		<item level="1" text="Teletext CleanAlgo (resolution reset algorithm)" description="Select the method of restoring screen resolution and framebuffer when leaving teletext.">config.usage.tuxtxt_CleanAlgo</item>
+        <item level="1" text="12V output" description="12V output." requires="12V_Output">config.usage.output_12V</item>
 		<item level="2" text="Alternative services tuner priority" description="Configure which tuner type will be preferred, when the same service is available on different types of tuners.">config.usage.alternatives_priority</item>
 		<item level="2" text="Preferred tuner" description="Configure which tuner will be preferred, when more than one tuner is available. If set to 'auto' the system will give priority to the tuner having the lowest number of channels/satellites.">config.usage.frontend_priority</item>
 		<item level="2" tunerlevel="1" text="Preferred tuners, multiple selection allowed" description="In expert mode, configure which tuners will be preferred, when more than one tuner is available.">config.usage.frontend_priority_multiselect</item>
@@ -205,10 +218,13 @@
 	<setup key="display" title="Settings..." requires="FrontpanelDisplay">
 		<item level="0" requires="LcdDisplay" text="Brightness (Normal)" description="Configure the brightness level of the front panel display for normal operation.">config.lcd.bright</item>
 		<item level="0" requires="LcdDisplay" text="Brightness (Standby)" description="Configure the brightness level of the front panel display for standby.">config.lcd.standby</item>
-		<item level="0" requires="LcdDisplay" text="Contrast" description="Configure the contrast level of the front panel display.">config.lcd.contrast</item>
+		<item level="0" requires="ConfigDisplay" text="Contrast" description="Configure the contrast level of the front panel display.">config.lcd.contrast</item>
 		<item level="0" requires="LcdDisplay" text="LED Normal" description="LED brightness during normal operations.">config.lcd.ledbrightness</item>
 		<item level="0" requires="LcdDisplay" text="LED Standby" description="LED brightness during standby.">config.lcd.ledbrightnessstandby</item>
 		<item level="0" requires="LcdDisplay" text="LED Deep Standby" description="LED brightness during deep standby.">config.lcd.ledbrightnessdeepstandby</item>
+		<item level="0" requires="7segment" text="Show in Standby" description="This option allows you choose how to display the Time or nothing in Standby">config.usage.show_in_standby</item>
+		<item level="2" requires="VFD_initial_scroll_delay" text="Initial scroll delay" description="Delay in miliseconds before start of scrolling text on display.">config.usage.vfd_initial_scroll_delay</item>
+		<item level="2" requires="VFD_final_scroll_delay" text="Final scroll delay" description="Delay in miliseconds after finish scrolling text on display.">config.usage.vfd_final_scroll_delay</item>
 		<item level="1" requires="LcdDisplay" text="Repeat Display Message" description="If the text is too long to be displayed on the front panel, it will be repeated (number of times):">config.lcd.repeat</item>
 		<item level="1" requires="LcdDisplay" text="Scrolling Speed" description="Set the scrolling speed of text on the front display.">config.lcd.scrollspeed</item>
 		<item level="1" requires="LcdDisplay" text="Show Display Icons" description="Allows you to enable/disable displaying icons on the front panel.">config.lcd.mode</item>
